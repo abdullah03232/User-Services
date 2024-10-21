@@ -42,14 +42,17 @@ public class UsersController {
 	
 	@GetMapping("/{userId}")
 	ResponseEntity<Users> getSingleUsers(@PathVariable String userId){
-		System.out.println("Line-------------45");
-		System.out.println(userService.getSingleUser(userId));
 		return ResponseEntity.status(HttpStatus.OK).body(userService.getSingleUser(userId));
 	}
 	
 	@GetMapping
 	ResponseEntity<List<Users>> getAllUsers(){
 		return ResponseEntity.status(HttpStatus.OK).body(userService.getAllUsers());
+	}
+	
+	@GetMapping("/rating/{userId}")
+	ResponseEntity<Users> getUserRating(@PathVariable String userId){
+		return ResponseEntity.status(HttpStatus.OK).body(userService.getUserRating(userId));
 	}
 	
 	

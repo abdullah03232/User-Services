@@ -22,4 +22,6 @@ public interface UsersService {
 
 	// get all users
 	List<Users> getAllUsers();
+	
+	Users getUserRating(String usersId);
 }
