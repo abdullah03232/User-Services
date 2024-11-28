@@ -11,11 +11,9 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class Rating {
-	private String ratingid;
-	private String userId;
+public class Hotel {
 	private String hotelId;
-	private int rating;
-	private String feedback;
-	private Hotel hotel;
+	private String hotelName;
+	private String hotelLocation;
+	private String hotelAbout;
 }

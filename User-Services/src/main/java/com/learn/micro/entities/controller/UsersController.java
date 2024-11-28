@@ -55,6 +55,11 @@ public class UsersController {
 		return ResponseEntity.status(HttpStatus.OK).body(userService.getUserRating(userId));
 	}
 	
+	@GetMapping("/ratingWithHotel/{userId}")
+	ResponseEntity<Users> ratingWithHotel(@PathVariable String userId){
+		return ResponseEntity.status(HttpStatus.OK).body(userService.getUserRatingWithHotel(userId));
+	}
+	
 	
 	
 	

@@ -24,4 +24,6 @@ public interface UsersService {
 	List<Users> getAllUsers();
 	
 	Users getUserRating(String usersId);
+	
+	Users getUserRatingWithHotel(String usersId);
 }
