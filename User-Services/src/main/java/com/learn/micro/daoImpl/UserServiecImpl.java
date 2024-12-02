@@ -1,4 +1,4 @@
-package com.learn.micro.entities.daoImpl;
+package com.learn.micro.daoImpl;
 
 import java.net.URL;
 import java.util.ArrayList;
@@ -14,12 +14,13 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import com.learn.micro.dao.UsersService;
 import com.learn.micro.entities.Hotel;
 import com.learn.micro.entities.Rating;
 import com.learn.micro.entities.Users;
-import com.learn.micro.entities.dao.UsersService;
-import com.learn.micro.entities.exception.ResourseNotFound;
-import com.learn.micro.entities.repositories.UserRepository;
+import com.learn.micro.exception.ResourseNotFound;
+import com.learn.micro.external.services.HotelService;
+import com.learn.micro.repositories.UserRepository;
 
 @Service
 public class UserServiecImpl implements UsersService {
@@ -30,6 +31,8 @@ public class UserServiecImpl implements UsersService {
 	@Autowired
 	private RestTemplate restTemplate;
 
+	@Autowired
+	private HotelService hotelService;
 	
 	@Override
 	public Users createUser(Users user) {
@@ -83,8 +86,10 @@ public class UserServiecImpl implements UsersService {
 		List<Rating> ratings = Arrays.stream(ratingsOfUser).toList();	
 	
 		List<Rating> ratingList = ratings.stream().map(rating -> {
-		ResponseEntity<Hotel> hotelData = restTemplate.getForEntity("http://HOTEL-SERVICES/hotels/"+rating.getHotelId(), Hotel.class);
-		Hotel hotel = hotelData.getBody();
+		//ResponseEntity<Hotel> hotelData = restTemplate.getForEntity("http://HOTEL-SERVICES/hotels/"+rating.getHotelId(), Hotel.class);
+		//Hotel hotel = hotelData.getBody();
+			
+		Hotel hotel = hotelService.getHotel(rating.getHotelId());
 			
 		System.out.println("Line------------------94");
 		System.out.println(hotel.toString());

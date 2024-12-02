@@ -1,4 +1,4 @@
-package com.learn.micro.entities.exception;
+package com.learn.micro.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
@@ -6,7 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
-import com.learn.micro.entities.apiresponse.APIResponse;
+import com.learn.micro.apiresponse.APIResponse;
 
 @RestControllerAdvice
 public class GlobalExceptionHandler {

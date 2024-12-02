@@ -1,4 +1,4 @@
-package com.learn.micro.entities.exception;
+package com.learn.micro.exception;
 
 public class ResourseNotFound extends RuntimeException{
 	

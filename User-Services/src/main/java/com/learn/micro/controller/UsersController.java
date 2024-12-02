@@ -1,4 +1,4 @@
-package com.learn.micro.entities.controller;
+package com.learn.micro.controller;
 
 import java.util.List;
 
@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.learn.micro.dao.UsersService;
 import com.learn.micro.entities.Users;
-import com.learn.micro.entities.dao.UsersService;
 
 @RestController
 @RequestMapping("/users")

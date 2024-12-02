@@ -1,4 +1,4 @@
-package com.learn.micro.entities.dao;
+package com.learn.micro.dao;
 
 import java.util.List;
 

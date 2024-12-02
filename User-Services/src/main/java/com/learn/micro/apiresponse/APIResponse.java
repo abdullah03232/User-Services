@@ -1,4 +1,4 @@
-package com.learn.micro.entities.apiresponse;
+package com.learn.micro.apiresponse;
 
 import org.springframework.http.HttpStatus;
 
