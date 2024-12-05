@@ -90,6 +90,7 @@ public class UserServiecImpl implements UsersService {
 		//Hotel hotel = hotelData.getBody();
 			
 		Hotel hotel = hotelService.getHotel(rating.getHotelId());
+		
 			
 		System.out.println("Line------------------94");
 		System.out.println(hotel.toString());
